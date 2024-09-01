@@ -1,16 +1,32 @@
-# Write your return_cost function here:
-def return_cost(menu, item):
-  
-  pass
+choice = 'vanilla'
+if choice in 'flavors':
+  cost = 'flavors[choice]'
+else:
+  cost = 0
+print('The cost of', choice, 'is', cost)
+
 
 # Write your fanciest_flavor function here:
-highest_cost = 0
-fanciest = ''
-for flavor in flavors:
+def fanciest_flavor(flavors):
+  highest_cost = 0
+  fanciest = ''
+  for flavor in flavors:
     if flavors[flavor] > highest_cost:
-       fanciest = flavor
-       highest_cost = flavors[flavor]
-print('The fanciest is', fanciest, 'and it costs', highest_cost)
+      fanciest = flavor
+      highest_cost = flavors[flavor]
+  print('The fanciest flavor is', fanciest, 'and it costs', highest_cost)
+  pass
+
+
+# Write your return_cost function here:
+def return_cost(menu, item):
+  found = item in menu
+  if found:
+    return menu[item]
+  else: 
+    return 0
+  pass
+  
 
 
 
@@ -39,10 +55,4 @@ print('---')
 expensive_flavor = fanciest_flavor('flavors')
 print(f"The most expensive flavor we have is {expensive_flavor}.")
 
-main()
-choice = 'vanilla'
-if choice in 'flavors':
-  cost = 'flavors[choice]'
-else:
-  cost = 0
-print('The cost of', choice, 'is', cost)
+
