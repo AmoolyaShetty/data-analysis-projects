@@ -53,3 +53,19 @@ else:
 
 
 # e) Modify the code to query the user for BOTH a cabinet in cargo_hold AND a particular item. Use the in method to check if the cabinet contains the selected item, then print “Cabinet ____ DOES/DOES NOT contain ____.”
+cabinet_index = input("Select a cabinet (0-3):")
+if cabinet_index.isdigit():
+    cabinet_index = int(cabinet_index)
+    if 0 <= cabinet_index<len(cargo_hold):
+        item = input("Enter the item to check:").strip()
+        selected_cabinet = cargo_hold[cabinet_index]
+        if item is selected_cabinet:
+            print(f"Cabinet{cabinet_index}DOES contain'{item}'.")
+        else:
+            print(f"Cabinet{cabinet_index}DOES NOT contain '{item}'.")
+    else:
+        print("Error:Invalid cabinet choice. Please select a number between 0 and 3.")
+else:
+    print("Error:Invalid output.Please enter a number.")
+
+
